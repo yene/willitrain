@@ -1,0 +1,5 @@
+{
+    "rainChanceThreshold": 0.3,
+    "coldBelowCelsius": 12.0,
+    "eveningDropCelsius": 5.0
+}

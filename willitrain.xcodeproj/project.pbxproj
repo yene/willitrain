@@ -6,8 +6,15 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AC722628305D82C000E04EF0 /* NOTES.md in Resources */ = {isa = PBXBuildFile; fileRef = AC722627305D82C000E04EF0 /* NOTES.md */; };
+		AC72262B305D830700E04EF0 /* SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = AC72262A305D830700E04EF0 /* SPEC.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		AC722617305D7EE500E04EF0 /* willitrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = willitrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC722627305D82C000E04EF0 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
+		AC72262A305D830700E04EF0 /* SPEC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SPEC.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -30,6 +37,8 @@
 		AC72260E305D7EE500E04EF0 = {
 			isa = PBXGroup;
 			children = (
+				AC72262A305D830700E04EF0 /* SPEC.md */,
+				AC722627305D82C000E04EF0 /* NOTES.md */,
 				AC722619305D7EE500E04EF0 /* willitrain */,
 				AC722618305D7EE500E04EF0 /* Products */,
 			);
@@ -102,6 +111,8 @@
 		AC722615305D7EE500E04EF0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				AC72262B305D830700E04EF0 /* SPEC.md in Resources */,
+				AC722628305D82C000E04EF0 /* NOTES.md in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -241,6 +252,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = willitrain/willitrain.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NDJHDNKXD6;
@@ -251,6 +263,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -273,6 +286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = willitrain/willitrain.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NDJHDNKXD6;
@@ -283,6 +297,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
