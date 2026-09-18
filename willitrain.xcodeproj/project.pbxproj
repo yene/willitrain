@@ -9,18 +9,77 @@
 /* Begin PBXBuildFile section */
 		AC722628305D82C000E04EF0 /* NOTES.md in Resources */ = {isa = PBXBuildFile; fileRef = AC722627305D82C000E04EF0 /* NOTES.md */; };
 		AC72262B305D830700E04EF0 /* SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = AC72262A305D830700E04EF0 /* SPEC.md */; };
+		AC722639305D893400E04EF0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC722638305D893400E04EF0 /* WidgetKit.framework */; };
+		AC72263B305D893400E04EF0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC72263A305D893400E04EF0 /* SwiftUI.framework */; };
+		AC722646305D893600E04EF0 /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AC722636305D893400E04EF0 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC722644305D893600E04EF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC72260F305D7EE500E04EF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC722635305D893400E04EF0;
+			remoteInfo = widgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AC72264B305D893600E04EF0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				AC722646305D893600E04EF0 /* widgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AC722617305D7EE500E04EF0 /* willitrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = willitrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC722627305D82C000E04EF0 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
 		AC72262A305D830700E04EF0 /* SPEC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SPEC.md; sourceTree = "<group>"; };
+		AC722636305D893400E04EF0 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC722638305D893400E04EF0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AC72263A305D893400E04EF0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AC72264C305DCA8100E04EF0 /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AC722647305D893600E04EF0 /* Exceptions for "widget" folder in "widgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AC722635305D893400E04EF0 /* widgetExtension */;
+		};
+		AC72264E305DCE2B00E04EF0 /* Exceptions for "willitrain" folder in "widgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				WearRules.json,
+				WearRules.swift,
+				WeatherAdvisor.swift,
+			);
+			target = AC722635305D893400E04EF0 /* widgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AC722619305D7EE500E04EF0 /* willitrain */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AC72264E305DCE2B00E04EF0 /* Exceptions for "willitrain" folder in "widgetExtension" target */,
+			);
 			path = willitrain;
+			sourceTree = "<group>";
+		};
+		AC72263C305D893400E04EF0 /* widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AC722647305D893600E04EF0 /* Exceptions for "widget" folder in "widgetExtension" target */,
+			);
+			path = widget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -31,15 +90,25 @@
 			files = (
 			);
 		};
+		AC722633305D893400E04EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				AC72263B305D893400E04EF0 /* SwiftUI.framework in Frameworks */,
+				AC722639305D893400E04EF0 /* WidgetKit.framework in Frameworks */,
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AC72260E305D7EE500E04EF0 = {
 			isa = PBXGroup;
 			children = (
+				AC72264C305DCA8100E04EF0 /* widgetExtension.entitlements */,
 				AC72262A305D830700E04EF0 /* SPEC.md */,
 				AC722627305D82C000E04EF0 /* NOTES.md */,
 				AC722619305D7EE500E04EF0 /* willitrain */,
+				AC72263C305D893400E04EF0 /* widget */,
+				AC722637305D893400E04EF0 /* Frameworks */,
 				AC722618305D7EE500E04EF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,8 +117,18 @@
 			isa = PBXGroup;
 			children = (
 				AC722617305D7EE500E04EF0 /* willitrain.app */,
+				AC722636305D893400E04EF0 /* widgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AC722637305D893400E04EF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC722638305D893400E04EF0 /* WidgetKit.framework */,
+				AC72263A305D893400E04EF0 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,8 +141,12 @@
 				AC722613305D7EE500E04EF0 /* Sources */,
 				AC722614305D7EE500E04EF0 /* Frameworks */,
 				AC722615305D7EE500E04EF0 /* Resources */,
+				AC72264B305D893600E04EF0 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				AC722645305D893600E04EF0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				AC722619305D7EE500E04EF0 /* willitrain */,
@@ -72,6 +155,24 @@
 			productName = willitrain;
 			productReference = AC722617305D7EE500E04EF0 /* willitrain.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AC722635305D893400E04EF0 /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC722648305D893600E04EF0 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				AC722632305D893400E04EF0 /* Sources */,
+				AC722633305D893400E04EF0 /* Frameworks */,
+				AC722634305D893400E04EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				AC72263C305D893400E04EF0 /* widget */,
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = AC722636305D893400E04EF0 /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -84,6 +185,9 @@
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					AC722616305D7EE500E04EF0 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					AC722635305D893400E04EF0 = {
 						CreatedOnToolsVersion = 27.0;
 					};
 				};
@@ -103,6 +207,7 @@
 			projectRoot = "";
 			targets = (
 				AC722616305D7EE500E04EF0 /* willitrain */,
+				AC722635305D893400E04EF0 /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -115,6 +220,11 @@
 				AC722628305D82C000E04EF0 /* NOTES.md in Resources */,
 			);
 		};
+		AC722634305D893400E04EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -123,7 +233,20 @@
 			files = (
 			);
 		};
+		AC722632305D893400E04EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC722645305D893600E04EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC722635305D893400E04EF0 /* widgetExtension */;
+			targetProxy = AC722644305D893600E04EF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC722620305D7EE700E04EF0 /* Debug configuration for PBXProject "willitrain" */ = {
@@ -258,11 +381,11 @@
 				DEVELOPMENT_TEAM = NDJHDNKXD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Will it Rain";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,11 +415,11 @@
 				DEVELOPMENT_TEAM = NDJHDNKXD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Will it Rain";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +431,70 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC722649305D893600E04EF0 /* Debug configuration for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDJHDNKXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Will it Rain";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yannick.willitrain.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC72264A305D893600E04EF0 /* Release configuration for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDJHDNKXD6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Will it Rain";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yannick.willitrain.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,6 +518,14 @@
 			buildConfigurations = (
 				AC722623305D7EE700E04EF0 /* Debug configuration for PBXNativeTarget "willitrain" */,
 				AC722624305D7EE700E04EF0 /* Release configuration for PBXNativeTarget "willitrain" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		AC722648305D893600E04EF0 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC722649305D893600E04EF0 /* Debug configuration for PBXNativeTarget "widgetExtension" */,
+				AC72264A305D893600E04EF0 /* Release configuration for PBXNativeTarget "widgetExtension" */,
 			);
 			defaultConfigurationName = Release;
 		};

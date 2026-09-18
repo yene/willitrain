@@ -22,6 +22,8 @@ struct DaySummary {
     let highCelsius: Double
     let maxRainChance: Double
     let recommendations: [String]
+    /// The single most important recommendation, short enough for a small widget.
+    let shortRecommendation: String
 }
 
 /// Applies the WearRules thresholds to a day's hourly forecast.
@@ -53,29 +55,45 @@ struct WeatherAdvisor {
         let high = temperatures.max()!
         let maxRainChance = hours.map(\.precipitationChance).max()!
 
-        var recommendations: [String] = []
-
-        if maxRainChance >= rules.rainChanceThreshold {
-            let peak = hours.max { $0.precipitationChance < $1.precipitationChance }!
-            let time = peak.date.formatted(date: .omitted, time: .shortened)
-            recommendations.append("It will rain (\(maxRainChance.formatted(.percent)) chance around \(time)) — you need an umbrella.")
-        }
-
-        if low < rules.coldBelowCelsius {
-            recommendations.append("It will be cold (low around \(formatTemperature(low))) — wear a jacket.")
-        }
+        let willRain = maxRainChance >= rules.rainChanceThreshold
+        let isCold = low < rules.coldBelowCelsius
 
         // Evening = 17:00–20:00, when the SPEC.md persona heads home from work.
         let eveningLow = hours
             .filter { (17..<20).contains(calendar.component(.hour, from: $0.date)) }
             .map(\.temperatureCelsius)
             .min()
-        if let eveningLow, firstHour.temperatureCelsius - eveningLow >= rules.eveningDropCelsius {
+        let coldEvening = eveningLow.map { firstHour.temperatureCelsius - $0 >= rules.eveningDropCelsius } ?? false
+
+        var recommendations: [String] = []
+
+        if willRain {
+            let peak = hours.max { $0.precipitationChance < $1.precipitationChance }!
+            let time = peak.date.formatted(date: .omitted, time: .shortened)
+            recommendations.append("It will rain (\(maxRainChance.formatted(.percent)) chance around \(time)) — you need an umbrella.")
+        }
+
+        if isCold {
+            recommendations.append("It will be cold (low around \(formatTemperature(low))) — wear a jacket.")
+        }
+
+        if coldEvening, let eveningLow {
             recommendations.append("It will be colder in the evening (around \(formatTemperature(eveningLow))) — bring extra clothes.")
         }
 
         if recommendations.isEmpty {
             recommendations.append("Nothing special needed — enjoy your day.")
+        }
+
+        let shortRecommendation: String
+        if willRain {
+            shortRecommendation = "Take an umbrella"
+        } else if isCold {
+            shortRecommendation = "Wear a jacket"
+        } else if coldEvening {
+            shortRecommendation = "Pack extra layers"
+        } else {
+            shortRecommendation = "You're all set"
         }
 
         return DaySummary(
@@ -84,7 +102,8 @@ struct WeatherAdvisor {
             lowCelsius: low,
             highCelsius: high,
             maxRainChance: maxRainChance,
-            recommendations: recommendations
+            recommendations: recommendations,
+            shortRecommendation: shortRecommendation
         )
     }
 
